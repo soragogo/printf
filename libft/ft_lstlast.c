@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/05 05:52:40 by ekamada          ###   ########.fr       */
+/*   Created: 2023/06/03 14:18:17 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/03 14:45:31 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void ft_printf(const char* format, ...);
-
-int main(void)
+t_list	*ft_lstlast(t_list *lst)
 {
-    ft_printf("%u", -1);
-    // ft_printf("ss", "abc", "def");
-    // ft_printf("dfc", 50, 3.3, 'Z');
+	if (lst == NULL)
+		return (lst);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

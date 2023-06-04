@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/05 05:52:40 by ekamada          ###   ########.fr       */
+/*   Created: 2023/06/03 14:18:05 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/03 14:37:57 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void ft_printf(const char* format, ...);
-
-int main(void)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    ft_printf("%u", -1);
-    // ft_printf("ss", "abc", "def");
-    // ft_printf("dfc", 50, 3.3, 'Z');
+	t_list	*last;
+
+	last = *lst;
+	if (lst == NULL)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		while (last->next != NULL)
+			last = last->next;
+		last->next = new;
+	}
 }

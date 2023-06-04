@@ -6,13 +6,14 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:54:35 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/04 23:28:53 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/05 01:11:38 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-ft_print_c(int c, int *printlen)
+int ft_print_c(int c, int *printlen)
 {
-	
+	printlen += write(1, &c, 1);
+	return (0);
 }

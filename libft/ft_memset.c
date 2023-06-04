@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/05 05:52:40 by ekamada          ###   ########.fr       */
+/*   Created: 2023/05/17 19:44:50 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/03 14:54:21 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void ft_printf(const char* format, ...);
-
-int main(void)
+void	*ft_memset(void *b, int c, int n)
 {
-    ft_printf("%u", -1);
-    // ft_printf("ss", "abc", "def");
-    // ft_printf("dfc", 50, 3.3, 'Z');
+	char	*p;
+	int		i;
+
+	p = b;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = c;
+		i++;
+	}
+	return (b);
 }
+
+/*
+int main()
+{
+	void *b[30];
+	ft_memset(b, 0, 3);
+	b[3] = 0;
+}*/

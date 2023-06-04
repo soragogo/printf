@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/05 05:52:40 by ekamada          ###   ########.fr       */
+/*   Created: 2023/05/17 19:44:53 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/03 21:49:47 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void ft_printf(const char* format, ...);
-
-int main(void)
+char	*ft_strdup(const char *str)
 {
-    ft_printf("%u", -1);
-    // ft_printf("ss", "abc", "def");
-    // ft_printf("dfc", 50, 3.3, 'Z');
+	int		i;
+	char	*cpy;
+
+	i = ft_strlen(str);
+	cpy = malloc(sizeof(char) * i + 1);
+	if (cpy == NULL)
+		return (NULL);
+	ft_strlcpy(cpy, str, i + 1);
+	return (cpy);
 }
+
+// int main()
+// {
+// 	char *str = "Hello People";
+// 	char *cpy = ft_strdup(str);
+// 	printf("Copied string: %s\n", cpy);
+// 	free(cpy);
+// 	return 0;
+// }

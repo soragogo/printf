@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/05 05:52:40 by ekamada          ###   ########.fr       */
+/*   Created: 2023/05/17 19:44:12 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/03 15:35:10 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void ft_printf(const char* format, ...);
-
-int main(void)
+size_t	ft_strlen(const char *str)
 {
-    ft_printf("%u", -1);
-    // ft_printf("ss", "abc", "def");
-    // ft_printf("dfc", 50, 3.3, 'Z');
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
+
+/*
+int main()
+{
+	char test[] = "Helloooooooo:)";
+	printf("%d", ft_strlen(test));
+}*/

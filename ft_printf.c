@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 20:33:25 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/04 23:28:44 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/05 02:37:53 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format ++;
-			if (ft_strchr("cspdixX", *format) != NULL)
-				ft_conversions(*format, args, &printlen);
+			if (ft_strchr("cspdiuxX", *format) != NULL)
+				ft_conversions(format, args, &printlen);
 			else
 				printlen += write(1, format, 1);
 			format ++;
 		}	
 	}
+	return (printlen);
 }

@@ -1,22 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/05 05:52:40 by ekamada          ###   ########.fr       */
+/*   Created: 2023/05/18 13:39:56 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/03 16:15:06 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void ft_printf(const char* format, ...);
-
-int main(void)
+char	*ft_strrchr(const char *s, int c)
 {
-    ft_printf("%u", -1);
-    // ft_printf("ss", "abc", "def");
-    // ft_printf("dfc", 50, 3.3, 'Z');
+	int	i;
+	int	last;
+
+	i = 0;
+	last = -1;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			last = i;
+		i++;
+	}
+	if (c == 0)
+		return ((char *)s + i);
+	else if (last == -1)
+		return (NULL);
+	else
+		return ((char *)s + last);
 }
+
+/*
+int main()
+{
+	char str[] = "abbdefghijklmnopqrstuvwxyzb", *p;
+	p = ft_strrchr(str, 'b');
+	printf("%ld", p - str);
+	return 0;
+}
+*/
