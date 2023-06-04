@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/04 22:29:58 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/04 23:28:53 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void ft_printf(const char* format, ...);
 
 int main(void)
 {
-    ft_printf("ddcd", 10, 20, 'x', 30);
+    printf("ddcd", 10, 20, 'x', 30);
     // ft_printf("ss", "abc", "def");
     // ft_printf("dfc", 50, 3.3, 'Z');
 }
