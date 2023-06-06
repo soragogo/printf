@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:25:11 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 19:44:23 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/06 21:27:16 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ char	*ft_itoa(int n)
 	else
 		ft_itoa_recursive(ascii, n);
 
-	printf("%s", ascii);
 	return (ascii);
 }
 

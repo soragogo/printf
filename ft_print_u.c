@@ -6,13 +6,13 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:03 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 18:32:47 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/06 21:30:00 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char *ft_unsigned_to_a(unsigned int num)
+static char *ft_unsigned_to_a(unsigned int num)
 {
 	unsigned long 	i;
 	int j;
@@ -44,7 +44,7 @@ int ft_print_u(unsigned int num, int *printlen)
 	char *ascii_num;
 
 	ascii_num = ft_unsigned_to_a(num);
-	printlen += write(1, ascii_num, ft_strlen(ascii_num));
+	*printlen += write(1, ascii_num, ft_strlen(ascii_num));
 	free(ascii_num);
 	return (0);
 }

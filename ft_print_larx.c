@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:05 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 19:35:29 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/06 21:29:46 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ int	ft_print_larx(unsigned int num, int *printlen)
 	if (num == 0)
 	{
 		ascii_num = "0";
-		printlen += write(1, ascii_num, 3);
+		*printlen += write(1, ascii_num, 3);
 		return (0);
 	}
 	ascii_num = dicimal_to_hexa(num);
 	if (ascii_num == NULL)
 		return (0);
-	printlen += write(1, ascii_num, ft_strlen(ascii_num));
+	*printlen += write(1, ascii_num, ft_strlen(ascii_num));
 	free(ascii_num);
 	return (0);
 }
