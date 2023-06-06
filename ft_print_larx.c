@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_x.c                                       :+:      :+:    :+:   */
+/*   ft_print_larx.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:05 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 19:35:22 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/06 19:35:29 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*dicimal_to_hexa(unsigned int num)
 		if (num % 16 < 10)
 			ascii_num[i--] = num % 16 + '0';
 		else
-			ascii_num[i--] = num % 16 +  87;
+			ascii_num[i--] = num % 16 +  55;
 		num /= 16;
 	}
 	ascii_num[digit_count - 1] = '\0';
@@ -50,7 +50,7 @@ static char	*dicimal_to_hexa(unsigned int num)
 }
 
 
-int	ft_print_x(unsigned int num, int *printlen)
+int	ft_print_larx(unsigned int num, int *printlen)
 {
 	char	*ascii_num;
 
