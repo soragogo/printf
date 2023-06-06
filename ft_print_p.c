@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:54:59 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:53:58 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/06 22:05:21 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,15 @@ int	ft_point_hexi(unsigned long long num, int *printlen)
 
 	if (num == 0)
 	{
-		ascii_num = "0";
+		ascii_num = "0x0";
 		*printlen += write(1, ascii_num, 3);
+		free(ascii_num);
 		return (0);
 	}
 	ascii_num = dicimal_to_hexa(num);
 	if (ascii_num == NULL)
 		return (0);
+	*printlen += write(1, "0x", 2);
 	*printlen += write(1, ascii_num, ft_strlen(ascii_num));
 	free(ascii_num);
 	return (0);
@@ -70,8 +72,9 @@ int	ft_point_hexi(unsigned long long num, int *printlen)
 
 void ft_print_p(unsigned long long num, int *printlen)
 {
-	uintptr_t	address;
+	// uintptr_t	address;
 
-	address = (uintptr_t)&num;
-	ft_point_hexi(address, printlen);
+	// address = (intptr_t)&num;
+	// printf("%llu", num);
+	ft_point_hexi(num, printlen);
 }
