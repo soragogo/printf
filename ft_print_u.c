@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:03 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 20:28:38 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 21:47:08 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,11 @@ static int	digit_count(int n)
 	return (i);
 }
 
-static char *ft_unsigned_to_a(unsigned int num)
+static char	*ft_unsigned_to_a(unsigned int num)
 {
-	unsigned long 	i;
-	int j;
-
-	char *ascii_num;
+	unsigned long	i;
+	int				j;
+	char			*ascii_num;
 
 	ascii_num = malloc(sizeof(char) * (digit_count(num)));
 	if (ascii_num == NULL)
@@ -51,11 +50,10 @@ static char *ft_unsigned_to_a(unsigned int num)
 		j ++;
 	}
 	ascii_num[j] = 0;
-	return(ascii_num);
+	return (ascii_num);
 }
 
-
-int ft_print_u(unsigned int num, int *printlen)
+void	ft_print_u(unsigned int num, int *printlen)
 {
 	char	*ascii_num;
 
@@ -64,8 +62,10 @@ int ft_print_u(unsigned int num, int *printlen)
 	else
 	{
 		ascii_num = ft_unsigned_to_a(num);
+		if (ascii_num == NULL)
+			return ;
 		*printlen += write(1, ascii_num, ft_strlen(ascii_num));
 		free(ascii_num);
 	}
-	return (0);
+	return ;
 }

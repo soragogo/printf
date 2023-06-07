@@ -6,18 +6,18 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:54:59 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 20:14:34 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 21:49:17 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int		hexa_digit_count(unsigned long long num)
+static int	hexa_digit_count(unsigned long long num)
 {
 	int		digit_count;
 
 	digit_count = 0;
-	while(num > 0)
+	while (num > 0)
 	{
 		num /= 16;
 		digit_count ++;
@@ -37,42 +37,36 @@ static char	*dicimal_to_hexa(unsigned long long num)
 		return (NULL);
 	i = 0;
 	i = digit_count - 2;
-	while(num > 0)
+	while (num > 0)
 	{
 		if (num % 16 < 10)
 			ascii_num[i--] = num % 16 + '0';
 		else
-			ascii_num[i--] = num % 16 +  87;
+			ascii_num[i--] = num % 16 + 87;
 		num /= 16;
 	}
 	ascii_num[digit_count - 1] = '\0';
 	return (ascii_num);
 }
 
-
-int	ft_point_hexi(unsigned long long num, int *printlen)
+void	ft_point_hexi(unsigned long long num, int *printlen)
 {
 	char	*ascii_num;
 
 	if (num == 0)
-	{
 		*printlen += write(1, "0x0", 3);
-		return (0);
+	else
+	{
+		ascii_num = dicimal_to_hexa(num);
+		if (ascii_num == NULL)
+			return ;
+		*printlen += write(1, "0x", 2);
+		*printlen += write(1, ascii_num, ft_strlen(ascii_num));
+		free(ascii_num);
 	}
-	ascii_num = dicimal_to_hexa(num);
-	if (ascii_num == NULL)
-		return (0);
-	*printlen += write(1, "0x", 2);
-	*printlen += write(1, ascii_num, ft_strlen(ascii_num));
-	free(ascii_num);
-	return (0);
 }
 
-void ft_print_p(unsigned long long num, int *printlen)
+void	ft_print_p(unsigned long long num, int *printlen)
 {
-	// uintptr_t	address;
-
-	// address = (intptr_t)&num;
-	// printf("%llu", num);
 	ft_point_hexi(num, printlen);
 }
