@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:54:57 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:29:32 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 19:53:15 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 
 int ft_print_di(int num, int *printlen)

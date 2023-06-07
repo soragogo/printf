@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:03 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:30:00 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 19:52:59 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static char *ft_unsigned_to_a(unsigned int num)
 {

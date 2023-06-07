@@ -6,13 +6,27 @@
 #    By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/04 18:20:44 by ekamada           #+#    #+#              #
-#    Updated: 2023/06/04 23:28:54 by ekamada          ###   ########.fr        #
+#    Updated: 2023/06/07 19:55:52 by ekamada          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = 
+SRCS = ft_printf.c \
+		ft_conversions.c \
+		ft_print_c.c \
+		ft_print_s.c \
+		ft_print_di.c \
+		ft_print_p.c \
+		ft_print_u.c \
+		ft_print_x.c \
+		ft_print_larx.c \
+		libft/ft_itoa.c \
+		libft/ft_strlcpy.c \
+		libft/ft_strlen.c \
+		libft/ft_strchr.c \
+
+
 
 CC = cc
 

@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 21:51:37 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:38:23 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 19:53:25 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_conversions(char const *format, va_list args, int *printlen)
 {

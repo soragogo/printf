@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:28:00 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:53:33 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 19:52:45 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PRINTF_H
-#define PRINTF_H
+# ifndef FT_PRINTF_H
+#define FT_PRINTF_H
 
 #include <stdio.h>
 #include <stdint.h>

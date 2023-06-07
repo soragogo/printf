@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:05 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:29:46 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 19:53:12 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int		hexa_digit_count(unsigned int num)
 {

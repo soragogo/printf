@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 18:26:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:55:44 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 19:53:22 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 
 int main(void)
