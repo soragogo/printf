@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 19:45:01 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 16:15:01 by ekamada          ###   ########.fr       */
+/*   Created: 2023/05/17 21:17:08 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/07 22:00:12 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_toupper(int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	if (c <= 'z' && c >= 'a')
-		c -= 32;
-	i++;
-	return (c);
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	if (c == 0)
+		return ((char *)s + i);
+	return (NULL);
 }
 
-/*
-int main()
-{
-	char a[50] = "hEy PeopLE!!*:)";
-	printf("%s", ft_toupper(a));
-}*/
+// int main()
+// {
+// 	char str[] = "abcdefghijklmnopqrstuvwxyz", *p;
+// 	p = strchr(str, '5');
+// 	printf("%ld", p - str);
+// 	return 0;
+// }

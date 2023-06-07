@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 14:18:53 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 16:15:09 by ekamada          ###   ########.fr       */
+/*   Created: 2023/02/14 13:40:54 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/07 22:00:11 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
-	char			*result;
+	size_t	count;
 
-	i = 0;
-	if (s == NULL || f == NULL)
-		return (NULL);
-	result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (result == NULL)
-		return (NULL);
-	while (i < ft_strlen(s))
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	count = ft_strlen(src);
+	while (dstsize > 1 && *src)
 	{
-		result[i] = f(i, s[i]);
-		i++;
+		*dst++ = *src++;
+		dstsize--;
 	}
-	result[i] = '\0';
-	return (result);
+	*dst = 0;
+	return (count);
 }
+
+// int main()
+// {
+
+// 	char src[] = "coucou";
+// 	char dest[10]; memset(dest, 'A', 10);
+// 	ft_strlcpy(dest, src, 0);
+// 	printf("%s", dest);
+// }

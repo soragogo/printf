@@ -6,7 +6,7 @@
 #    By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/04 18:20:44 by ekamada           #+#    #+#              #
-#    Updated: 2023/06/07 19:55:52 by ekamada          ###   ########.fr        #
+#    Updated: 2023/06/07 21:58:55 by ekamada          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ SRCS = ft_printf.c \
 		ft_print_u.c \
 		ft_print_x.c \
 		ft_print_larx.c \
-		libft/ft_itoa.c \
-		libft/ft_strlcpy.c \
-		libft/ft_strlen.c \
-		libft/ft_strchr.c \
+		ft_itoa.c \
+		ft_strlcpy.c \
+		ft_strlen.c \
+		ft_strchr.c \
 
 
 

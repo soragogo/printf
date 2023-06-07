@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:25:11 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 21:43:55 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 22:00:14 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static void	ft_itoa_recursive(char *ascii, int n)
 {

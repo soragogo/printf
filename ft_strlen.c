@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 14:18:14 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 16:19:51 by ekamada          ###   ########.fr       */
+/*   Created: 2023/05/17 19:44:12 by ekamada           #+#    #+#             */
+/*   Updated: 2023/06/07 22:00:10 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+size_t	ft_strlen(const char *str)
 {
-	if (lst == NULL || del == NULL)
-	{
-		return ;
-	}
-	del(lst->content);
-	free(lst);
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
+
+/*
+int main()
+{
+	char test[] = "Helloooooooo:)";
+	printf("%d", ft_strlen(test));
+}*/
