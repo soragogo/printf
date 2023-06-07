@@ -6,11 +6,27 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:03 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 19:52:59 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 20:28:38 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	digit_count(int n)
+{
+	int	i;
+
+	i = 0;
+	if (n <= 0)
+		i++;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	i++;
+	return (i);
+}
 
 static char *ft_unsigned_to_a(unsigned int num)
 {
@@ -19,12 +35,12 @@ static char *ft_unsigned_to_a(unsigned int num)
 
 	char *ascii_num;
 
-	ascii_num = malloc(sizeof(char) * 11);
+	ascii_num = malloc(sizeof(char) * (digit_count(num)));
 	if (ascii_num == NULL)
 		return (NULL);
 	i = 1;
 	j = 0;
-	while (i < num)
+	while (i <= num)
 		i *= 10;
 	i /= 10;
 	while (i > 0)
@@ -41,10 +57,15 @@ static char *ft_unsigned_to_a(unsigned int num)
 
 int ft_print_u(unsigned int num, int *printlen)
 {
-	char *ascii_num;
+	char	*ascii_num;
 
-	ascii_num = ft_unsigned_to_a(num);
-	*printlen += write(1, ascii_num, ft_strlen(ascii_num));
-	free(ascii_num);
+	if (num == 0)
+		*printlen += write(1, "0", 1);
+	else
+	{
+		ascii_num = ft_unsigned_to_a(num);
+		*printlen += write(1, ascii_num, ft_strlen(ascii_num));
+		free(ascii_num);
+	}
 	return (0);
 }

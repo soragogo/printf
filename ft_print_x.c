@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:05 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 19:52:56 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 20:31:45 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,14 @@ int	ft_print_x(unsigned int num, int *printlen)
 	char	*ascii_num;
 
 	if (num == 0)
+		*printlen += write(1, "0", 1);
+	else
 	{
-		ascii_num = "0";
-		*printlen += write(1, ascii_num, 3);
-		return (0);
+		ascii_num = dicimal_to_hexa(num);
+		if (ascii_num == NULL)
+			return (0);
+		*printlen += write(1, ascii_num, ft_strlen(ascii_num));
+		free(ascii_num);
 	}
-	ascii_num = dicimal_to_hexa(num);
-	if (ascii_num == NULL)
-		return (0);
-	*printlen += write(1, ascii_num, ft_strlen(ascii_num));
-	free(ascii_num);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:54:59 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 19:53:09 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 20:14:34 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ int	ft_point_hexi(unsigned long long num, int *printlen)
 
 	if (num == 0)
 	{
-		ascii_num = "0x0";
-		*printlen += write(1, ascii_num, 3);
-		free(ascii_num);
+		*printlen += write(1, "0x0", 3);
 		return (0);
 	}
 	ascii_num = dicimal_to_hexa(num);

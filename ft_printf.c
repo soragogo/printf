@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 20:33:25 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 19:52:50 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 20:43:10 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	ft_printf(const char *format, ...)
 			format ++;
 		}	
 	}
+	va_end(args);
 	return (printlen);
 }

@@ -6,13 +6,13 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:25:11 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/06 21:27:16 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/07 20:22:03 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_itoa_recursive(char *ascii, int n)
+static void	ft_itoa_recursive(char *ascii, int n)
 {
 	unsigned long	i;
 	unsigned long	n_;
@@ -36,7 +36,7 @@ void	ft_itoa_recursive(char *ascii, int n)
 	*ascii = 0;
 }
 
-int	digit_count(int n)
+static int	digit_count(int n)
 {
 	int	i;
 
