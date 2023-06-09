@@ -6,13 +6,13 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:55:03 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 21:47:08 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/09 15:20:38 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	digit_count(int n)
+static int	digit_count(unsigned int n)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:28:00 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/07 22:02:49 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/09 15:24:05 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 
 int		ft_printf(const char *format, ...);
-void	ft_conversions(char const *format, va_list args, int *printlen);
+void	ft_conversions(char const **format, va_list args, int *printlen);
 void	ft_print_di(int num, int *printlen);
 void	ft_print_p(unsigned long long num, int *printlen);
 void	ft_print_s(char *s, int *printlen);
